@@ -93,12 +93,19 @@ td, th {
 .form {line-height:28px;}
 
 .tblWorkOrders {width: 1000px;}
+
+.newWorkOrder {
+	width:200px;
+	height:50px;
+	
+}
 .workOrder {
     border: 1px solid #CCCCCC;
     float: left;
     margin: 5px;
     padding: 5px;
     width: 478px;
+    height: 160px;
 }
 
 .workOrder .col1 {

@@ -1,6 +1,6 @@
 <h1>Listing Work Orders</h1>
-<%= link_to 'New Work order', new_work_order_path %>
-<br />
+<%= button_to 'New Work Order', new_work_order_path, {:class => "newWorkOrder" } %>
+
 <%= select_tag_for_filter("work_orders", @filters, params) %>
 <p id="notice"><%= notice %></p>
 <br />

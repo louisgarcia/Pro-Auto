@@ -1,0 +1,13 @@
+<%= form_for(@jobs) do |job| %>
+<td>
+<p>
+  <b>Name:</b>
+  <%= job.employee.first_name %>
+</p>
+ 
+<p>
+  <b>Role:</b>
+  <%= job.role %>
+</p>
+</td>
+<% end %>

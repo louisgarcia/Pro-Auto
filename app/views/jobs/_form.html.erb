@@ -1,0 +1,13 @@
+<%= form_for([@work_order, @work_order.jobs.build]) do |j| %>
+ <div class="field">
+    <%= j.label :employee %><br />
+    <%= j.select :employee_id, @employees_for_select, {:include_blank => true} %><br 
+  </div>
+  <div class="field">
+    <%= j.label :role %><br />
+    <%= j.select :role, ["Receiver","Detailer","Inspector","Deliverer"], {:include_blank => true} %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'Add Job', :name=> 'add_job' %>
+  </div>
+<% end %>

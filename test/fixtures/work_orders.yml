@@ -1,0 +1,37 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  shop: 
+  client: 
+  stock_number: MyString
+  make: 
+  model: 
+  year: MyString
+  vin: MyString
+  priority: 1
+  dirty: 1
+  notes: MyText
+  status: MyString
+  created: 2011-06-01 20:47:04
+  received: 2011-06-01 20:47:04
+  started: 2011-06-01 20:47:04
+  finished: 2011-06-01 20:47:04
+  delivered: 2011-06-01 20:47:04
+
+two:
+  shop: 
+  client: 
+  stock_number: MyString
+  make: 
+  model: 
+  year: MyString
+  vin: MyString
+  priority: 1
+  dirty: 1
+  notes: MyText
+  status: MyString
+  created: 2011-06-01 20:47:04
+  received: 2011-06-01 20:47:04
+  started: 2011-06-01 20:47:04
+  finished: 2011-06-01 20:47:04
+  delivered: 2011-06-01 20:47:04

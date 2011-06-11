@@ -1,0 +1,51 @@
+<h1>Listing Work Orders</h1>
+<%= link_to 'Create New Work order', new_work_order_path %>
+<%= select_tag_for_filter("work_orders", @filters, params) %>
+<p id="notice"><%= notice %></p>
+<br />
+<table>
+  <tr>
+	<th>W.O ID</th>
+	<th>Status</th>
+    <th>Client</th>
+    <th>Stock number</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Year</th>
+    <th>Vin</th>
+    <th>Priority</th>
+    <th>Dirty</th>
+    <th>Created</th>
+    <th>Received</th>
+    <th>Started</th>
+    <th>Finished</th>
+    <th>Delivered</th>
+	<th>Assign</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @work_orders.each do |work_order| %>
+  <tr>
+	<td><%= work_order.id %></td>
+	<td><%= work_order.status %></td>
+    <td><%= work_order.client.business_name %></td>
+    <td><%= work_order.stock_number %></td>
+    <td><%= work_order.make.name %></td>
+    <td><%= work_order.model.name %></td>
+    <td><%= work_order.year %></td>
+    <td><%= work_order.vin %></td>
+    <td><%= yes_no(work_order.priority) %></td>
+    <td><%= yes_no(work_order.dirty) %></td>
+    <td><%= work_order.created_at.localtime.strftime("%m/%d %I:%M %p") %></td>
+	<%= times(work_order) %>
+	<td></td>
+    <td><%= work_order.notes %></td>
+    <td><%= link_to 'Show', work_order %></td>
+    <td><%= link_to 'Edit', edit_work_order_path(work_order) %></td>
+    <td><%= link_to 'Destroy', work_order, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

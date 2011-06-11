@@ -1,0 +1,70 @@
+<%= form_for(@work_order) do |f| %>
+  <% if @work_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@work_order.errors.count, "error") %> prohibited this work_order from being saved:</h2>
+
+      <ul>
+      <% @work_order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="row1">
+	<div class="col1">
+		<div class="form">
+			<%= f.label :shop %><br />
+			<%= f.label :status %><br />
+			<%= f.label :client %><br />
+			<%= f.label :stock_number %><br />
+			<%= f.label :make %><br />
+			<%= f.label :model %><br />
+			<%= f.label :year %><br />
+	    	<%= f.label :vin %><br />
+	    	<%= f.label :priority %><br />
+	    	<%= f.label :dirty %><br />
+			<%= f.label :created %><br />
+			<%= f.label :received %><br />
+	  		<%= f.label :started %><br />
+	  		<%= f.label :finished %><br />
+	  		<%= f.label :delivered %><br />
+			<%= f.label :notes %><br />
+		</div>
+	</div>
+	<div class="col2">
+		<div class="form">
+			<%= f.select(:shop_id, Shop.all.collect {|s| [ s.name, s.id ] }) %><br />
+			<%= f.text_field :status %><br />
+			<%= f.select(:client_id, Client.all.collect {|c| [ c.business_name, c.id ] }, {:include_blank => true}) %><br />
+			<%= f.text_field :stock_number %><br />
+			<%= f.select :make_id, @makes_for_select, {:include_blank => true} %><br />
+			<%= f.collection_select :model_id, Model.find(:all), :id, :name, {:include_blank => true} %><br />
+			<%= f.text_field :year %><br />
+			<%= f.text_field :vin %><br />
+			<%= f.check_box(:priority) %><br />
+			<%= f.check_box(:dirty) %><br />
+			<%= f.datetime_select :created_at, :include_blank => true %><br />
+			<%= f.datetime_select :received, :include_blank => true %><br />
+			<%= f.datetime_select :started, :include_blank => true %><br />
+			<%= f.datetime_select :finished, :include_blank => true %><br />
+			<%= f.datetime_select :delivered, :include_blank => true %><br />
+			<%= f.text_area :notes, :size => "20x10" %><br />
+
+			
+		</div>
+	</div>
+		<% f.fields_for :jobs do |job| %>
+		<%= render "job_fields", :f => job %>
+		<% end %>
+<p><%= link_to_add_fields "Add Job", f, :jobs %></p>
+
+
+	
+    
+  <div class="actions">
+ 	 <p><%= f.submit "Submit" %></p>
+
+    
+  </div>
+<% end %>

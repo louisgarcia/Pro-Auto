@@ -1,0 +1,78 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Client:</b>
+  <%= @work_order.client.business_name %>
+</p>
+
+<p>
+  <b>Stock number:</b>
+  <%= @work_order.stock_number %>
+</p>
+
+<p>
+  <b>Make:</b>
+  <%= @work_order.make.name %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @work_order.model.name %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @work_order.year %>
+</p>
+
+<p>
+  <b>Vin:</b>
+  <%= @work_order.vin %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%= yes_no(@work_order.priority) %>
+</p>
+
+<p>
+  <b>Dirty:</b>
+  <%= yes_no(@work_order.dirty) %>
+</p>
+
+<p>
+  <b>Created:</b>
+  <%= @work_order.created_at %>
+</p>
+
+<p>
+  <b>Received:</b>
+  <%= @work_order.received %>
+</p>
+
+<p>
+  <b>Started:</b>
+  <%= @work_order.started %>
+</p>
+
+<p>
+  <b>Finished:</b>
+  <%= @work_order.finished %>
+</p>
+
+<p>
+  <b>Delivered:</b>
+  <%= @work_order.delivered %>
+</p>
+<p>
+  <b>Notes:</b>
+  <%= @work_order.notes %>
+</p>
+
+<% for job in @work_order.jobs %>
+<p><%= job.employee %> - <%= job.role %></p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_work_order_path(@work_order) %> |
+<%= link_to 'Back', work_orders_path %>

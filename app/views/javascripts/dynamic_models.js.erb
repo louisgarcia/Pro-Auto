@@ -1,0 +1,29 @@
+var models = new Array();
+<% for model in @models -%>
+  models.push(new Array(<%= model.make_id %>, '<%= model.name %>', <%= model.id %>));
+<% end -%>
+
+function makeSelected() {
+  make_id = $('work_order_make_id').getValue();
+  options = $('work_order_model_id').options;
+  options.length = 1;
+  models.each(function(model) {
+    if (model[0] == make_id) {
+      options[options.length] = new Option(model[1], model[2]);
+    }
+  });
+  
+}
+
+document.observe('dom:loaded', function() {
+  model_id = $('work_order_model_id').getValue();
+	if (model_id == "")
+	{ 
+		makeSelected();
+		$('work_order_make_id').observe('change', makeSelected);
+	}
+	else
+	{
+		$('work_order_make_id').observe('change', makeSelected);
+	}
+});

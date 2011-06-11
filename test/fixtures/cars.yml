@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  make: MyString
+  model: MyString
+  year: 1
+  vin: MyString
+  stock_number: MyString
+  dirty: 1
+  comments: MyText
+
+two:
+  make: MyString
+  model: MyString
+  year: 1
+  vin: MyString
+  stock_number: MyString
+  dirty: 1
+  comments: MyText

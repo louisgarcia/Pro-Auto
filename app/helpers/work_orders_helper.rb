@@ -23,18 +23,19 @@ module WorkOrdersHelper
     end
     if work_order.delivered != nil
       @delivered = work_order.delivered.localtime.strftime("%m/%d %I:%M %p")  
-    end
+    end 
+  
     
     if work_order.status == "New"
-      html << "<td>#{button_to("Received", :action => "received", :id => work_order.id )}</td><td></td><td></td><td></td>"
+      html << "<tr><td>Created</td><td>#{@created}</td></tr><tr><td colspan='2'>#{button_to("Received", :action => "received", :id => work_order.id )}</td></tr>"
     elsif work_order.status =="Received"
-      html << "<td>#{@received}</td><td>#{button_to("Started", :action => 'started', :id => work_order.id )}</td><td></td><td></td>"
+      html << "<tr><td>Created</td><td>#{@created}</td></tr><tr><td>Received</td><td>#{@received}</td></tr><tr><td colspan='2'>#{button_to("Started", :action => 'started', :id => work_order.id )}</td></tr>"
     elsif work_order.status =="Started"
-      html << "<td>#{@received}</td><td>#{@started}</td><td>#{button_to("Finished", :action => 'finished', :id => work_order.id )}</td><td></td>"
+      html << "<tr><td>Created</td><td>#{@created}</td></tr><tr><td>Received</td><td>#{@received}</td></tr><tr><td>Started</td><td>#{@started}</td></tr><tr><td colspan='2'>#{button_to("Finished", :action => 'finished', :id => work_order.id )}</td></tr>"
     elsif work_order.status =="Finished"
-      html << "<td>#{@received}</td><td>#{@started}</td><td>#{@finished}</td><td>#{button_to("Delivered", :action => 'delivered', :id => work_order.id )}</td>"
+      html << "<tr><td>Created</td><td>#{@created}</td></tr><tr><td>Received</td><td>#{@received}</td></tr><tr><td>Started</td><td>#{@started}</td></tr><tr><td>Finished</td><td>#{@finished}</td></tr><tr><td colspan='2'>#{button_to("Delivered", :action => 'delivered', :id => work_order.id )}</td></tr>"
     elsif work_order.status =="Delivered"
-      html << "<td>#{@received}</td><td>#{@started}</td><td>#{@finished}</td><td>#{@delivered}</td>"
+      html << "<tr><td>Created</td><td>#{@created}</td></tr><tr><td>Received</td><td>#{@received}</td></tr><tr><td>Started</td><td>#{@started}</td></tr><tr><td>Finished</td><td>#{@finished}</td></tr><tr><td>Delivered</td><td>#{@delivered}</td></tr>"
     end
     html.html_safe
   end  

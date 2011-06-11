@@ -161,7 +161,7 @@ end
     @work_order.status = "Delivered"
     respond_to do |format|
       if @work_order.update_attributes(params[:work_order])
-        format.html { redirect_to(:action => 'assign_work', :id => @work_order.id) }
+        format.html { redirect_to(:back, :notice => 'Work Order Finished.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

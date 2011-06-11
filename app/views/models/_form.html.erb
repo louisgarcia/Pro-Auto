@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :make.name %><br />
+    <%= f.label :make %><br />
     <%= f.select(:make_id, Make.all.collect {|m| [ m.name, m.id ] }) %><br />
   </div>
   <div class="field">

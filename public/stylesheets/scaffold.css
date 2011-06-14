@@ -7,6 +7,12 @@ body, p, ol, ul, td {
     line-height: 18px;
 
 }
+
+body {
+	margin:0;
+	padding:0;
+}
+
 .button_to {
 	margin:0;
 }
@@ -23,8 +29,8 @@ pre {
 }
 
 a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+
+
 
 div.field, div.actions {
   margin-bottom: 10px;
@@ -36,9 +42,9 @@ div.field, div.actions {
 }
 
 #page {
-	border: 5px solid #CCCCCC;
+	
     float: left;
-    padding: 20px;
+    
     width: 1000px;
 }
 
@@ -49,6 +55,35 @@ div.field, div.actions {
 .field_with_errors {
   display: inline;
   color: red;
+}
+
+#navcontainer ul
+{
+padding: 0;
+margin: 0;
+background-color: #036;
+color: White;
+float: left;
+width: 100%;
+font-family: arial, helvetica, sans-serif;
+}
+
+#navcontainer ul li { display: inline; }
+
+#navcontainer ul li a
+{
+padding: 0.2em 1em;
+background-color: #036;
+color: White;
+text-decoration: none;
+float: left;
+border-right: 1px solid #fff;
+}
+
+#navcontainer ul li a:hover
+{
+background-color: #369;
+color: #fff;
 }
 
 #error_explanation {
@@ -78,14 +113,79 @@ div.field, div.actions {
 
 table {
 	border-collapse:collapse;
+	width:100%;
 	
   }
 td, th { 
   	border: 1px solid #CCC;
   	padding: 1px;
   }
+#jobs {
+	float:right;
+	width:330px;
+}
+.job {
+	float:left
+}
+#jobs .col1 {width:100px;}
+#jobs .col2 {width:100px;}
+#jobs .col3 {width:100px;}
 
-.col1, .col2 {
+#shopsTbl {
+	border: 1px solid #6699CC;
+    border-collapse: collapse;
+    font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+    
+    
+    text-align: left;
+    width: 100%;
+}
+
+#blueTbl tbody {
+	background: none repeat scroll 0 0 #E8EDFF;
+}
+
+#blueTbl th {
+	color: #003399;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 15px 10px 10px;
+}
+
+#blueTbl td {
+	border-top: 1px dashed #FFFFFF;
+    color: #666699;
+    padding: 10px;
+}
+
+#blueTbl tbody tr:hover td {
+    background: none repeat scroll 0 0 #D0DAFD;
+    color: #333399;
+}
+
+.showBtn, .editBtn, .delBtn {
+	width:20px;
+	height:20px;
+	float:left;
+	margin: 0 7px
+}
+
+.workOrderBtn {
+	float:left; 
+	margin-top:8px
+}
+
+.showBtn {background: url('/images/show.png') no-repeat top left;}
+.editBtn {background: url('/images/edit.png') no-repeat top left;}
+.delBtn {background: url('/images/del.png') no-repeat top left;}
+.buttons {width:138px;}
+
+#row1, #row2 {
+	clear:both;
+	float:left;
+}
+
+.col1, .col2, .col3 {
 	float:left;}
 
 .col1 {width:100px;}

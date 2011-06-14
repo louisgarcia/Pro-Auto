@@ -1,37 +1,28 @@
 <h1>Listing employees</h1>
 
-<table>
-  <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Street address</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-    <th>Phone</th>
-    <th>Email</th>
-    <th>Start date</th>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<table id="blueTbl">
+  <thead>
+	  <tr>
+	    <th>Name</th>
+	    <th>Address</th>
+	    <th>Phone</th>
+	    <th>Title</th>
+	    <th></th>
+	  </tr>
+  </thead>
+  <tfoot>
+	<tr></tr>
+  </tfoot>
+  <tbody>
 <% @employees.each do |employee| %>
   <tr>
-    <td><%= employee.first_name %></td>
-    <td><%= employee.last_name %></td>
-    <td><%= employee.street_address %></td>
-    <td><%= employee.city %></td>
-    <td><%= employee.state %></td>
-    <td><%= employee.zip %></td>
+    <td><%= employee.first_name %> <%= employee.last_name %></td>
+    <td><%= employee.street_address %> <%= employee.city %> <%= employee.state %> <%= employee.zip %></td>
     <td><%= employee.phone %></td>
-    <td><%= employee.email %></td>
-    <td><%= employee.start_date %></td>
     <td><%= employee.title %></td>
-    <td><%= link_to 'Show', employee %></td>
-    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-    <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to '', employee, :class => 'showBtn' %>
+		<%= link_to '', edit_employee_path(employee), :class => 'editBtn' %>
+	    <%= link_to '', employee, :class => 'delBtn', :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

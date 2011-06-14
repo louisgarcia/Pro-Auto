@@ -1,23 +1,27 @@
 <h1>Listing makes</h1>
 
-<table>
-  <tr>
-    <th>ID</th>
-	<th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table id="blueTbl">
+  <thead>
+	  <tr>
+	    <th>ID</th>
+		<th>Name</th>
+	    <th></th>
+	  </tr>
+  </thead>
+  <tfoot>
+	<tr></tr>  
+  </tfoot>
+  <tbody>
 
 <% @makes.each do |make| %>
   <tr>
 	<td><%= make.id %></td>
     <td><%= make.name %></td>
-    <td><%= link_to 'Show', make %></td>
-    <td><%= link_to 'Edit', edit_make_path(make) %></td>
-    <td><%= link_to 'Destroy', make, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+    <td><%= link_to '', make, :class => 'showBtn' %>
+		<%= link_to '', edit_make_path(make), :class => 'editBtn' %>
+	    <%= link_to '', make, :class => 'delBtn', :confirm => 'Are you sure?', :method => :delete %></td>  </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />

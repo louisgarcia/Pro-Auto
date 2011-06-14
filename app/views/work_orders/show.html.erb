@@ -70,7 +70,7 @@
 </p>
 
 <% for job in @work_order.jobs %>
-<p><%= job.employee %> - <%= job.role %></p>
+<p><%= job.employee.first_name %> - <%= job.role %></p>
 <% end %>
 
 

@@ -1,34 +1,36 @@
 <h1>Listing shops</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Street address</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-    <th>Phone</th>
-    <th>Fax</th>
-    <th>Website</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table id="blueTbl">
+   <!-- Table header -->  
+  <thead>
+	  <tr>
+	    <th>Name</th>
+	    <th>Address</th>
+	    <th>Phone</th>
+	    <th>Website</th>
+	    <th></th>
+	  </tr>
+	</thead>
+	<!-- Table footer -->  
+    <tfoot>  
+	    <tr>  
+	      
+		</tr>  
+    </tfoot>  
 
 <% @shops.each do |shop| %>
-  <tr>
-    <td><%= shop.name %></td>
-    <td><%= shop.street_address %></td>
-    <td><%= shop.city %></td>
-    <td><%= shop.state %></td>
-    <td><%= shop.zip %></td>
-    <td><%= shop.phone %></td>
-    <td><%= shop.fax %></td>
-    <td><%= shop.website %></td>
-    <td><%= link_to 'Show', shop %></td>
-    <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-    <td><%= link_to 'Destroy', shop, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<tbody>  
+	<tr>
+	    <td><%= shop.name %></td>
+	    <td><%= shop.street_address %> <%= shop.city %>, <%= shop.state %> <%= shop.zip %></td>
+	    <td><%= shop.phone %></td>
+	    <td><%= shop.website %></td>
+	    <td>
+		<%= link_to '', shop, :class => 'showBtn' %>
+		<%= link_to '', edit_shop_path(shop), :class => 'editBtn' %>
+	    <%= link_to '', shop, :class => 'delBtn', :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+	</tbody>
 <% end %>
 </table>
 

@@ -1,10 +1,11 @@
-<div class="fields">
-<p>
-  <%= f.label :employee, "Employee" %><br />
-  <%= f.text_field :employee_id %><br />
-  <%= f.label :role, "Role" %><br />
-  <%= f.text_field :role %><br />
-  <%= link_to_remove_fields "remove", f %>
-
-</p>
+<div class="job fields">
+	<div class="col1">
+		<%= f.select :employee_id, @employees_for_select, {:include_blank => true} %><br />
+	</div>
+	<div class="col2">
+  		<%= f.select :role, ["Receiver","Detailer","Inspector","Deliverer"], {:include_blank => true} %><br />
+	</div> 
+	<div class="col3">
+	  <%= link_to_remove_fields "remove", f %>
+	</div>
 </div>

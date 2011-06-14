@@ -16,9 +16,13 @@
 	  Priority: <%= yes_no(work_order.priority) %><br />
 	  Dirty:<%= yes_no(work_order.dirty) %><br />
 		    <%= work_order.notes %>
-		    <%= link_to 'Show', work_order %>
-		    <%= link_to 'Edit', edit_work_order_path(work_order) %>
-		    <%= link_to 'Destroy', work_order, :confirm => 'Are you sure?', :method => :delete %>	
+ 
+			 
+		<div class="workOrderBtn">
+		<%= link_to '', work_order, :class => 'showBtn' %>
+		<%= link_to '', edit_work_order_path(work_order), :class => 'editBtn' %>
+	    <%= link_to '', work_order, :class => 'delBtn', :confirm => 'Are you sure?', :method => :delete %>
+		</div>	
 	</p>
 	</div>
 	  <div class="col2">

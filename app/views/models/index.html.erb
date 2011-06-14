@@ -1,22 +1,26 @@
 <h1>Listing models</h1>
 
-<table>
-  <tr>
-    <th>Make</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @models.each do |model| %>
-  <tr>
-    <td><%= model.make.name%></td>
-    <td><%= model.name %></td>
-    <td><%= link_to 'Show', model %></td>
-    <td><%= link_to 'Edit', edit_model_path(model) %></td>
-    <td><%= link_to 'Destroy', model, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<table id="blueTbl">
+  <thead>
+	  <tr>
+	    <th>Make</th>
+	    <th>Name</th>
+	    <th></th>
+	  </tr>
+  </thead>
+  <tfoot>
+	<tr></tr>
+  </tfoot>
+  <tbody><% @models.each do |model| %>
+	  <tr>
+	    <td><%= model.make.name%></td>
+	    <td><%= model.name %></td>
+	    <td>
+		<%= link_to '', model, :class => 'showBtn' %>
+		<%= link_to '', edit_model_path(model), :class => 'editBtn' %>
+	    <%= link_to '', model, :class => 'delBtn', :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+  </tbody>
 <% end %>
 </table>
 

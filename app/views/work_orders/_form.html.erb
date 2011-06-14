@@ -54,10 +54,25 @@
 			
 		</div>
 	</div>
-		<% f.fields_for :jobs do |job| %>
-		<%= render "job_fields", :f => job %>
-		<% end %>
-<p><%= link_to_add_fields "Add Job", f, :jobs %></p>
+	<div id="jobs">
+		<div id="row1">
+			<div class="col1">
+			Employee
+			</div>
+			<div class="col2">
+			Role
+			</div>
+			<div class="col3">
+			</div>
+		</div>	
+		<div id="row2">
+			<% f.fields_for :jobs do |job| %>
+				<%= render "job_fields", :f => job %>
+			<% end %>
+		</div>
+	</div>
+	<br />
+	<%= link_to_add_fields "Add Job", f, :jobs %>
 
 
 	

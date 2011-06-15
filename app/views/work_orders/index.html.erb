@@ -1,37 +1,43 @@
-<h1>Listing Work Orders</h1>
-<%= button_to 'New Work Order', new_work_order_path, {:class => "newWorkOrder" } %>
-
-<%= select_tag_for_filter("work_orders", @filters, params) %>
+<span class="title">Work Orders</span>
+<%= link_to '', new_work_order_path, :class => 'newBtn' %>
+<div id="filters">
+	<%= select_tag_for_filter("work_orders", @filters, params) %>
+</div>
 <p id="notice"><%= notice %></p>
 <br />
-
-<% @work_orders.each do |work_order| %>
-<div class="workOrder">
-  <div class="row1">
-	<div class="col1">
-	  <h1><%= work_order.id %> - <%= work_order.status %></h1>
-	  <h3><%= work_order.year %> <%= work_order.make.name %> <%= work_order.model.name %> <%= work_order.vin %></h3>  
-	  <b><%= work_order.client.business_name %> - <%= work_order.stock_number %></b><br />
-	  
-	  Priority: <%= yes_no(work_order.priority) %><br />
-	  Dirty:<%= yes_no(work_order.dirty) %><br />
-		    <%= work_order.notes %>
- 
-			 
-		<div class="workOrderBtn">
+<table id="blueTbl">
+  <thead>
+	<tr>
+	  <th>W.O</th>
+	  <th>Status</th>
+	  <th>Stock Number</th>
+	  <th>Car</th>
+	  <th>Client</th>
+	  <th>Notes</th>
+	  <th>Stage</th>
+	  <th class="buttonHdr"></th>
+	</tr>
+  </thead>
+  <tfoot>
+	<tr>
+	</tr>
+  </tfoot>
+  <tbody>
+	<% @work_orders.each do |work_order| %>
+	  <tr>
+		<td><%= work_order.id %></td>
+		<td><%= work_order.status %></td>
+		<td><%= work_order.stock_number %></td>
+		<td><%= work_order.year %> <%= work_order.make.name %> <%= work_order.model.name %></td>
+		<td><%= work_order.client.business_name %></td>
+		<td><%= work_order.notes %></td>
+		<td><%= next_stage(work_order) %></td>
+		<td><div class="workOrderBtn">
 		<%= link_to '', work_order, :class => 'showBtn' %>
 		<%= link_to '', edit_work_order_path(work_order), :class => 'editBtn' %>
 	    <%= link_to '', work_order, :class => 'delBtn', :confirm => 'Are you sure?', :method => :delete %>
-		</div>	
-	</p>
-	</div>
-	  <div class="col2">
-		<table class="workOrderTimes">
-		  <%= times(work_order) %>  
-		</table>
-	  </div>
-  </div>
-</div>
-
+		</div></td>
+	  </tr>
 <% end %>
+</tbody>
 </table>

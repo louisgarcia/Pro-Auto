@@ -1,11 +1,11 @@
-<h1>Listing makes</h1>
-
+<span class="title">Makes</span>
+<%= link_to '', new_make_path, :class => 'newBtn' %>
 <table id="blueTbl">
   <thead>
 	  <tr>
 	    <th>ID</th>
 		<th>Name</th>
-	    <th></th>
+	    <th class="buttonHdr"></th>
 	  </tr>
   </thead>
   <tfoot>
@@ -23,7 +23,3 @@
 <% end %>
 </tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Make', new_make_path %>

@@ -36,7 +36,8 @@ class WorkOrdersController < ApplicationController
     @makes_for_select = @makes.map{|m| [m.name, m.id]}
     @clients = Client.find(:all, :order => "business_name")
     @clients_for_select = @clients.map{|c| [c.business_name, c.id]}
-
+    @employees = Employee.find(:all, :order => "first_name")
+    @employees_for_select = @employees.map{|e| [e.first_name, e.id]}
     
     respond_to do |format|
       format.html # new.html.erb
@@ -115,23 +116,22 @@ end
     @work_order.received = Time.zone.now.to_datetime
     @work_order.status = "Received"
     respond_to do |format|
-      if @work_order.update_attributes(params[:work_order])
-        format.html { redirect_to(:back, :notice => 'Work Order Recieved.') }
+       if @work_order.update_attributes(params[:work_order])
+        format.html { redirect_to(:action => 'edit', :id => @work_order.id) }
         format.xml  { head :ok }
-      else
+       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @work_order.errors, :status => :unprocessable_entity }
-      end
     end
   end
-  
+end
   def started
     @work_order = WorkOrder.find(params[:id])
     @work_order.started = Time.zone.now.to_datetime
     @work_order.status = "Started"
     respond_to do |format|
       if @work_order.update_attributes(params[:work_order])
-        format.html { redirect_to(:back, :notice => 'Work Order Started.') }
+        format.html { redirect_to(:action => 'edit', :id => @work_order.id) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -146,7 +146,7 @@ end
     @work_order.status = "Finished"
     respond_to do |format|
       if @work_order.update_attributes(params[:work_order])
-        format.html { redirect_to(:back, :notice => 'Work Order Finished.') }
+        format.html { redirect_to(:action => 'edit', :id => @work_order.id) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -161,7 +161,7 @@ end
     @work_order.status = "Delivered"
     respond_to do |format|
       if @work_order.update_attributes(params[:work_order])
-        format.html { redirect_to(:back, :notice => 'Work Order Finished.') }
+        format.html { redirect_to(:action => 'edit', :id => @work_order.id) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

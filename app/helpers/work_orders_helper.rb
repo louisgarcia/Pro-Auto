@@ -7,6 +7,20 @@ module WorkOrdersHelper
     end
   end
   
+  def next_stage(work_order)
+    html = ""
+    if work_order.status == "New"
+      html << button_to("Received", :action => "received", :id => work_order.id )
+    elsif work_order.status =="Received"
+      html << button_to("Started", :action => 'started', :id => work_order.id )
+    elsif work_order.status =="Started"
+      html << button_to("Finished", :action => 'finished', :id => work_order.id )
+    elsif work_order.status =="Finished"
+      html << button_to("Delivered", :action => 'delivered', :id => work_order.id )
+    end
+    html.html_safe
+  end
+  
   def times(work_order)
     html = ""
     @id = work_order.id

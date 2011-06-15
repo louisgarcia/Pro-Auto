@@ -1,5 +1,5 @@
-<h1>Listing employees</h1>
-
+<span class="title">Employees</span>
+<%= link_to '', new_employee_path, :class => 'newBtn' %>
 <table id="blueTbl">
   <thead>
 	  <tr>
@@ -7,7 +7,7 @@
 	    <th>Address</th>
 	    <th>Phone</th>
 	    <th>Title</th>
-	    <th></th>
+	    <th class="buttonHdr"></th>
 	  </tr>
   </thead>
   <tfoot>
@@ -26,7 +26,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Employee', new_employee_path %>

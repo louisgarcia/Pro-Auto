@@ -44,8 +44,17 @@ div.field, div.actions {
 #page {
 	
     float: left;
-    
     width: 1000px;
+}
+
+#header, #content {
+	float:left;
+	width:100%;
+	margin-bottom:10px;
+}
+
+#filters {
+	float:right;
 }
 
 #notice {
@@ -149,19 +158,23 @@ td, th {
 	color: #003399;
     font-size: 14px;
     font-weight: normal;
-    padding: 15px 10px 10px;
+    padding: 5px;
+    text-align:center;
 }
 
 #blueTbl td {
 	border-top: 1px dashed #FFFFFF;
     color: #666699;
-    padding: 10px;
+    padding: 5px;
+    text-align:center;
 }
 
 #blueTbl tbody tr:hover td {
     background: none repeat scroll 0 0 #D0DAFD;
     color: #333399;
 }
+
+.buttonHdr{width:102px;}
 
 .showBtn, .editBtn, .delBtn {
 	width:20px;
@@ -170,9 +183,22 @@ td, th {
 	margin: 0 7px
 }
 
+.title {
+	float:left;
+	font-size:2em;
+	
+}
+
+.newBtn {
+	width:32px;
+	height:32px;
+	float:left;
+	background: url('/images/add.png') no-repeat top left;
+	margin-left:20px;
+}
+
 .workOrderBtn {
 	float:left; 
-	margin-top:8px
 }
 
 .showBtn {background: url('/images/show.png') no-repeat top left;}
@@ -205,7 +231,7 @@ td, th {
     margin: 5px;
     padding: 5px;
     width: 478px;
-    height: 160px;
+    height: 138px;
 }
 
 .workOrder .col1 {
@@ -214,8 +240,8 @@ td, th {
 }
 
 .workOrder .col2 {
-	width:230px;
-	float:left;
+    float: right;
+    width: 190px;
 }
 
 .workOrderTimes {

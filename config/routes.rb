@@ -6,6 +6,9 @@ App::Application.routes.draw do |map|
   
   resources :work_orders do 
     resources :jobs
+    collection do
+      get 'assignment'
+    end
   end
   
   resources :employees
@@ -16,6 +19,9 @@ App::Application.routes.draw do |map|
   
   get "home/index"
   map.js ':controller/:action.:format'
+  
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

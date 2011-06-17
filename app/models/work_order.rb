@@ -12,8 +12,8 @@ class WorkOrder < ActiveRecord::Base
   validates :model, :presence => true 
 
   named_scope :all
-  
-  named_scope :created, :conditions => { :status => "New" }
+  named_scope :new, :conditions => { :status => "New" }
+  named_scope :inventory, :conditions => { :status => ["Received", "Started","Finished"]}
   named_scope :received, :conditions => { :status => "Received" }
   named_scope :started, :conditions => { :status => "Started" }
   named_scope :finished, :conditions => { :status => "Finished" }
@@ -21,11 +21,11 @@ class WorkOrder < ActiveRecord::Base
   
   FILTERS = [
   {:scope => "all",         :label => "All"},
-  
-  {:scope => "created",         :label => "New"},
-  {:scope => "received",      :label => "Received"},
-  {:scope => "started",    :label => "Started"},
-  {:scope => "finished",     :label => "Finished"},
+  {:scope => "new",         :label => "New"},
+  {:scope => "inventory",         :label => "-- Inventory"},
+  {:scope => "received",      :label => "---- Received"},
+  {:scope => "started",    :label => "---- Started"},
+  {:scope => "finished",     :label => "---- Finished"},
   {:scope => "delivered",   :label => "Delivered"},
 ]
 

@@ -17,14 +17,10 @@
 			<%= f.label :shop %><br />
 			<%= f.label :status %><br />
 			<%= f.label :client %><br />
-			<%= f.label :stock_number %><br />
-			<%= f.label :make %><br />
-			<%= f.label :model %><br />
-			<%= f.label :year %><br />
+			Stock#<br />
+			Car<br />
 	    	<%= f.label :vin %><br />
-	    	<%= f.label :priority %><br />
-	    	<%= f.label :dirty %><br />
-			<%= f.label :created %><br />
+			<br />
 			<%= f.label :received %><br />
 	  		<%= f.label :started %><br />
 	  		<%= f.label :finished %><br />
@@ -35,21 +31,20 @@
 	<div class="col2">
 		<div class="form">
 			<%= f.select(:shop_id, Shop.all.collect {|s| [ s.name, s.id ] }) %><br />
-			<%= f.text_field :status %><br />
+			<%= f.select :status, ["New","Received","Started","Finished","Delivered"] %><br />
 			<%= f.select(:client_id, Client.all.collect {|c| [ c.business_name, c.id ] }, {:include_blank => true}) %><br />
 			<%= f.text_field :stock_number %><br />
-			<%= f.select :make_id, @makes_for_select, {:include_blank => true} %><br />
+			<%= f.select :year, options_for_select([ "","2011", "2010","2009","2008","2007","2006","2005","2004","2003","2002"],"") %>	
+			<%= f.select :make_id, @makes_for_select, {:include_blank => true} %>
 			<%= f.collection_select :model_id, Model.find(:all), :id, :name, {:include_blank => true} %><br />
-			<%= f.text_field :year %><br />
 			<%= f.text_field :vin %><br />
-			<%= f.check_box(:priority) %><br />
-			<%= f.check_box(:dirty) %><br />
+			<%= f.label :priority %><%= f.check_box(:priority) %> <%= f.label :dirty %> <%= f.check_box(:dirty) %><br />
 			<%= f.datetime_select :created_at, :include_blank => true %><br />
 			<%= f.datetime_select :received, :include_blank => true %><br />
 			<%= f.datetime_select :started, :include_blank => true %><br />
 			<%= f.datetime_select :finished, :include_blank => true %><br />
 			<%= f.datetime_select :delivered, :include_blank => true %><br />
-			<%= f.text_area :notes, :size => "20x10" %><br />
+			<%= f.text_area :notes, :size => "30x2" %><br />
 
 			
 		</div>

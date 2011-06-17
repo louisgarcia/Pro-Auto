@@ -3,7 +3,7 @@
 		<%= f.select :employee_id, @employees_for_select, {:include_blank => true} %><br />
 	</div>
 	<div class="col2">
-  		<%= f.select :role, ["Receiver","Detailer","Inspector","Deliverer"], {:include_blank => true} %><br />
+  		<%= f.select :role, ["Receiver","Detailer","Deliverer"], {:include_blank => true} %><br />
 	</div> 
 	<div class="col3">
 	  <%= link_to_remove_fields "remove", f %>

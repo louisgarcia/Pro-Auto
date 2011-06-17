@@ -1,4 +1,15 @@
 module WorkOrdersHelper
+
+  def priority(work_order)
+    html = ""
+    if work_order.priority == 1
+      html << "<tr class=""priority"">"
+    else
+      html << "<tr>"
+    end
+    html.html_safe
+  end
+  
   def yes_no(input)
     if input == 0 
       "No"
@@ -53,4 +64,18 @@ module WorkOrdersHelper
     end
     html.html_safe
   end  
+  
+  def assign_html(work_order)
+    html = html
+    if work_order.status == "Received"
+      html = "Who Received <strong>#{work_order.year} #{work_order.make.name} #{work_order.model.name}</strong> from <strong>#{work_order.client.business_name}</strong> Stock ##{work_order.stock_number}<br />"
+    elsif work_order.status == "Started"
+      html = "Who is Detailing <strong>#{work_order.year} #{work_order.make.name} #{work_order.model.name}</strong> from <strong>#{work_order.client.business_name}</strong> Stock ##{work_order.stock_number}<br />"
+    elsif work_order.status == "Finished"      
+      html = "Confirm Detailers for <strong>#{work_order.year} #{work_order.make.name} #{work_order.model.name}</strong> from <strong>#{work_order.client.business_name}</strong> Stock ##{work_order.stock_number}<br />"
+    elsif work_order.status == "Delivered"
+      html = "Who Delivered <strong>#{work_order.year} #{work_order.make.name} #{work_order.model.name}</strong> to <strong>#{work_order.client.business_name}</strong> Stock ##{work_order.stock_number}<br />"
+    end
+  html.html_safe
+  end
 end

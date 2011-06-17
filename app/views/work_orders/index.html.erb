@@ -1,43 +1,66 @@
+<span id="notice"><%= notice %></span>
 <span class="title">Work Orders</span>
 <%= link_to '', new_work_order_path, :class => 'newBtn' %>
-<div id="filters">
-	<%= select_tag_for_filter("work_orders", @filters, params) %>
-</div>
-<p id="notice"><%= notice %></p>
-<br />
-<table id="blueTbl">
-  <thead>
-	<tr>
-	  <th>W.O</th>
-	  <th>Status</th>
-	  <th>Stock Number</th>
-	  <th>Car</th>
-	  <th>Client</th>
-	  <th>Notes</th>
-	  <th>Stage</th>
-	  <th class="buttonHdr"></th>
-	</tr>
-  </thead>
-  <tfoot>
-	<tr>
-	</tr>
-  </tfoot>
-  <tbody>
-	<% @work_orders.each do |work_order| %>
-	  <tr>
-		<td><%= work_order.id %></td>
-		<td><%= work_order.status %></td>
-		<td><%= work_order.stock_number %></td>
-		<td><%= work_order.year %> <%= work_order.make.name %> <%= work_order.model.name %></td>
-		<td><%= work_order.client.business_name %></td>
-		<td><%= work_order.notes %></td>
-		<td><%= next_stage(work_order) %></td>
-		<td><div class="workOrderBtn">
-		<%= link_to '', work_order, :class => 'showBtn' %>
-		<%= link_to '', edit_work_order_path(work_order), :class => 'editBtn' %>
-	    <%= link_to '', work_order, :class => 'delBtn', :confirm => 'Are you sure?', :method => :delete %>
-		</div></td>
-	  </tr>
-<% end %>
-</tbody>
+	<table id="stats">
+		<thead>
+			<tr>
+				<th><%= link_to "NEW", :show => "new" %></th>
+				<th><%= link_to "REC", :show => "received" %></th>
+				<th><%= link_to "STA", :show => "started" %></th>
+				<th><%= link_to "FIN", :show => "finished" %></th>
+				<th><%= link_to "DEL", :show => "delivered" %></th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr></tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td><%= @work_orders.new.count %></td>
+				<td><%= @work_orders.received.count %></td>
+				<td><%= @work_orders.started.count %></td>
+				<td><%= @work_orders.finished.count %></td>
+				<td><%= @work_orders.delivered.count %></td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="filters">
+		<%= select_tag_for_filter("work_orders", @filters, params) %>
+	</div>
+	<br />
+	<table id="blueTbl">
+	  <thead>
+		<tr>
+		  <th>W.O</th>
+		  <th>Status</th>
+		  <th>Stock Number</th>
+		  <th>Car</th>
+		  <th>Client</th>
+		  <th>Notes</th>
+		  <th>Stage</th>
+		  <th class="buttonHdr"></th>
+		</tr>
+	  </thead>
+	  <tfoot>
+		<tr>
+		</tr>
+	  </tfoot>
+	  <tbody>
+		<% @work_orders.each do |work_order| %>
+		<%= priority(work_order) %>  
+			<td><%= work_order.id %></td>
+			<td><%= work_order.status %></td>
+			<td><%= work_order.stock_number %></td>
+			<td><%= work_order.year %> <%= work_order.make.name %> <%= work_order.model.name %></td>
+			<td><%= work_order.client.business_name %></td>
+			<td><%= work_order.notes %></td>
+			<td><%= next_stage(work_order) %></td>
+			<td><div class="workOrderBtn">
+			<%= link_to '', work_order, :class => 'showBtn' %>
+			<%= link_to '', edit_work_order_path(work_order), :class => 'editBtn' %>
+		    <%= link_to '', work_order, :class => 'delBtn', :confirm => 'Are you sure?', :method => :delete %>
+			</div></td>
+		  </tr>
+	<% end %>
+	</tbody>
 </table>

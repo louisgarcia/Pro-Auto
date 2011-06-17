@@ -11,6 +11,7 @@ body, p, ol, ul, td {
 body {
 	margin:0;
 	padding:0;
+	background: url('/images/random_grey_variations.png') repeat;
 }
 
 .button_to {
@@ -21,6 +22,9 @@ h1, h2, h3, h4 {
     padding: 0;
 }
 
+.priority td {
+	color:#CC0000 !important;
+}
 
 pre {
   background-color: #eee;
@@ -43,8 +47,11 @@ div.field, div.actions {
 
 #page {
 	
+    border: 1px solid #666;
     float: left;
+    padding: 10px;
     width: 1000px;
+    background: #FFF;
 }
 
 #header, #content {
@@ -55,6 +62,7 @@ div.field, div.actions {
 
 #filters {
 	float:right;
+	margin-right:20px;
 }
 
 #notice {
@@ -129,16 +137,50 @@ td, th {
   	border: 1px solid #CCC;
   	padding: 1px;
   }
+
+.newWo {width:220px;}
+
 #jobs {
-	float:right;
+	float:left;
 	width:330px;
 }
 .job {
-	float:left
+	clear: both;
+    float: left;
+    padding-bottom: 10px;
 }
+
+.job .col1, .job .col2 {
+	width:auto;
+	padding-right:10px
+	
+}
+
+#work_order_shop_id {width:260px;}
+#work_order_client_id {width:260px;}
+#work_order_stock_number {width:255px;}
+#work_order_vin {width:255px;}
+#work_order_model_id {min-width:102px;}
+
 #jobs .col1 {width:100px;}
 #jobs .col2 {width:100px;}
 #jobs .col3 {width:100px;}
+
+#stats {
+	float: right;
+    width: 200px;
+}
+
+#stats td {
+	background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+}
+
+#stats th {
+	text-align: center;
+}
 
 #shopsTbl {
 	border: 1px solid #6699CC;
@@ -152,6 +194,10 @@ td, th {
 
 #blueTbl tbody {
 	background: none repeat scroll 0 0 #E8EDFF;
+}
+
+#blueTbl {
+	margin-top:10px;
 }
 
 #blueTbl th {
@@ -214,7 +260,7 @@ td, th {
 .col1, .col2, .col3 {
 	float:left;}
 
-.col1 {width:100px;}
+.col1 {width:60px;}
 .col2 {width:400px;}
 .form {line-height:28px;}
 

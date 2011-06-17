@@ -1,0 +1,28 @@
+<span class="title">Contractors</span>
+<%= link_to '', new_contractor_path, :class => 'newBtn' %>
+<table id="blueTbl">
+  <thead>
+	  <tr>
+	    <th>Name</th>
+	    <th>Address</th>
+	    <th>Phone</th>
+	    <th>Title</th>
+	    <th class="buttonHdr"></th>
+	  </tr>
+  </thead>
+  <tfoot>
+	<tr></tr>
+  </tfoot>
+  <tbody>
+<% @contractors.each do |contractor| %>
+  <tr>
+    <td><%= contractor.first_name %> <%= contractor.last_name %></td>
+    <td><%= contractor.street_address %> <%= contractor.city %> <%= contractor.state %> <%= contractor.zip %></td>
+    <td><%= contractor.phone %></td>
+    <td><%= contractor.title %></td>
+    <td><%= link_to '', contractor, :class => 'showBtn' %>
+		<%= link_to '', edit_contractor_path(contractor), :class => 'editBtn' %>
+	    <%= link_to '', contractor, :class => 'delBtn', :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

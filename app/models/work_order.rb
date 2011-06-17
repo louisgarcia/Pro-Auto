@@ -12,16 +12,17 @@ class WorkOrder < ActiveRecord::Base
   validates :model, :presence => true 
 
   named_scope :all
-  named_scope :new, :conditions => { :status => "New" }
+  
   named_scope :inventory, :conditions => { :status => ["Received", "Started","Finished"]}
   named_scope :received, :conditions => { :status => "Received" }
   named_scope :started, :conditions => { :status => "Started" }
   named_scope :finished, :conditions => { :status => "Finished" }
   named_scope :delivered, :conditions => { :status => "Delivered" }
+  named_scope :news, :conditions => { :status => "New" }
   
   FILTERS = [
   {:scope => "all",         :label => "All"},
-  {:scope => "new",         :label => "New"},
+  {:scope => "news",         :label => "New"},
   {:scope => "inventory",         :label => "-- Inventory"},
   {:scope => "received",      :label => "---- Received"},
   {:scope => "started",    :label => "---- Started"},

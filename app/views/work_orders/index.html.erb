@@ -4,7 +4,7 @@
 	<table id="stats">
 		<thead>
 			<tr>
-				<th><%= link_to "NEW", :show => "new" %></th>
+				<th><%= link_to "NEW", :show => "news" %></th>
 				<th><%= link_to "REC", :show => "received" %></th>
 				<th><%= link_to "STA", :show => "started" %></th>
 				<th><%= link_to "FIN", :show => "finished" %></th>
@@ -16,7 +16,7 @@
 		</tfoot>
 		<tbody>
 			<tr>
-				<td><%= @work_orders.new.count %></td>
+				<td><%= @work_orders.news.count %></td>
 				<td><%= @work_orders.received.count %></td>
 				<td><%= @work_orders.started.count %></td>
 				<td><%= @work_orders.finished.count %></td>

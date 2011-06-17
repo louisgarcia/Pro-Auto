@@ -28,7 +28,6 @@ class WorkOrdersController < ApplicationController
   # GET /work_orders/new.xml
   def new
     @work_order = WorkOrder.new
-    @work_order.jobs.build
     @makes = Make.find(:all, :order => "name")
     @makes_for_select = @makes.map{|m| [m.name, m.id]}
     @clients = Client.find(:all, :order => "business_name")

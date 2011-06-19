@@ -1,6 +1,6 @@
 class RemoveEmployeeIdFromJobs < ActiveRecord::Migration
   def self.up
-    remove_column :jobs, :employee_id, :integer
+    remove_column :jobs, :employee_id
     drop_table :employees
   end
 

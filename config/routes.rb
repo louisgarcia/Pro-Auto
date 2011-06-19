@@ -1,5 +1,7 @@
 App::Application.routes.draw do |map|
 
+  resources :contractors
+
   resources :models  
   
   resources :makes 
@@ -9,6 +11,7 @@ App::Application.routes.draw do |map|
     collection do
       get 'assignment'
     end
+    resources :add_ons
   end
   
   resources :employees

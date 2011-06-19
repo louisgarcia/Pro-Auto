@@ -1,0 +1,11 @@
+<div class="add_on fields">
+	<div class="col1">
+		<%= f.text_field :name, {:class => "add_on_name"} %><br />
+	</div>
+	<div class="col2">
+   		<%= f.text_field :cost, {:class => "add_on_cost"}  %><br />
+	</div>
+	<div class="col3">
+		<%= link_to_remove_fields "remove", f %>
+	</div>
+</div>

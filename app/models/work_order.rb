@@ -4,7 +4,9 @@ class WorkOrder < ActiveRecord::Base
   belongs_to :make
   belongs_to :model
   has_many :jobs
-  accepts_nested_attributes_for :jobs, :allow_destroy => true, :reject_if => lambda { |a| a[:employee_id].blank? }
+  has_many :add_ons
+  accepts_nested_attributes_for :jobs, :allow_destroy => true, :reject_if => lambda { |a| a[:contractor_id].blank? }
+  accepts_nested_attributes_for :add_ons, :allow_destroy => true, :reject_if => lambda { |a| a[:name].blank? }
   
   validates :shop, :presence => true
   validates :client, :presence => true

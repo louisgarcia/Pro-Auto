@@ -1,365 +1,436 @@
-body { background-color: #fff; color: #333; }
-
+body {
+    background-color: #FFFFFF;
+    color: #333333;
+}
 body, p, ol, ul, td {
-    
     font-family: Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 18px;
-
 }
-
 body {
-	margin:0;
-	padding:0;
-	background: url('/images/random_grey_variations.png') repeat;
-}
-
-.button_to {
-	margin:0;
-}
-h1, h2, h3, h4 {
-	margin: 0;
+    background: url("/images/random_grey_variations.png") repeat scroll 0 0 transparent;
+    margin: 0;
     padding: 0;
 }
-
+.button_to {
+    margin: 0;
+}
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
 .priority td {
-	color:#CC0000 !important;
+    color: #CC0000 !important;
 }
-
 pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+    background-color: #EEEEEE;
+    font-size: 11px;
+    padding: 10px;
 }
-
-a { color: #000; }
-
-
-
+a {
+    color: #000000;
+}
 div.field, div.actions {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
-
 #wrapper {
-  margin: 0 auto;
-  width: 1000px;
+    margin: 0 auto;
+    width: 1000px;
 }
-
 #page {
-	
-    border: 1px solid #666;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #666666;
     float: left;
     padding: 10px;
-    width: 1000px;
-    background: #FFF;
+    width: 980px;
 }
-
 #header, #content {
-	float:left;
-	width:100%;
-	margin-bottom:10px;
+    float: left;
+    margin-bottom: 10px;
+    width: 100%;
 }
-
 #filters {
-	float:right;
-	margin-right:20px;
+    float: right;
+    margin-right: 20px;
 }
-
 #notice {
-  color: green;
+    color: green;
 }
-
 .field_with_errors {
-  display: inline;
-  color: red;
+    color: red;
+    display: inline;
 }
-
-#navcontainer ul
-{
-padding: 0;
-margin: 0;
-background-color: #036;
-color: White;
-float: left;
-width: 100%;
-font-family: arial, helvetica, sans-serif;
+#navcontainer ul {
+    background-color: #003366;
+    color: White;
+    float: left;
+    font-family: arial,helvetica,sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
-
-#navcontainer ul li { display: inline; }
-
-#navcontainer ul li a
-{
-padding: 0.2em 1em;
-background-color: #036;
-color: White;
-text-decoration: none;
-float: left;
-border-right: 1px solid #fff;
+#navcontainer ul li {
+    display: inline;
 }
-
-#navcontainer ul li a:hover
-{
-background-color: #369;
-color: #fff;
+#navcontainer ul li a {
+    background-color: #003366;
+    border-right: 1px solid #FFFFFF;
+    color: White;
+    float: left;
+    padding: 0.2em 1em;
+    text-decoration: none;
 }
-
+#navcontainer ul li a:hover {
+    background-color: #336699;
+    color: #FFFFFF;
+}
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+    background-color: #F0F0F0;
+    border: 2px solid red;
+    margin-bottom: 20px;
+    padding: 7px 7px 0;
+    width: 450px;
 }
-
 #error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
+    background-color: #CC0000;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    margin: -7px -7px 0;
+    padding: 5px 5px 5px 15px;
+    text-align: left;
 }
-
 #error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
+    font-size: 12px;
+    list-style: square outside none;
 }
-
 table {
-	border-collapse:collapse;
-	width:100%;
-	
-  }
-td, th { 
-  	border: 1px solid #CCC;
-  	padding: 1px;
-  }
-
-.newWo {width:220px;}
-
-#jobs {
-	float:left;
-	width:330px;
+    border-collapse: collapse;
+    width: 100%;
 }
-.job {
-	clear: both;
+td, th {
+    border: 1px solid #CCCCCC;
+    padding: 1px;
+}
+.newWo {
+    width: 220px;
+}
+#jobs {
+    float: right;
+    width: 520px;
+}
+
+#add_ons {
+    float: right;
+    width: 520px;
+}
+#work_order {
+    float: left;
+    width: 460px;
+}
+#work_details {
+	float:right;
+	width:520px;
+}
+.job, .add_on {
+    clear: both;
     float: left;
     padding-bottom: 10px;
 }
-
-.job .col1, .job .col2 {
-	width:auto;
-	padding-right:10px
-	
+.job .col1, .job .col2, .add_on .col1, .add_on .col2 {
+    padding-right: 10px;
+    width: auto;
+}
+#work_order_shop_id {
+    width: 260px;
+}
+#work_order_client_id {
+    width: 260px;
+}
+#work_order_stock_number {
+    width: 255px;
+}
+#work_order_vin {
+    width: 255px;
+}
+#work_order_model_id {
+    min-width: 102px;
+}
+#work_order_status {
+	width:260px;
+}
+#jobs .col1 {
+    width: 100px;
+}
+#jobs .col2 {
+    width: 100px;
+}
+#jobs .col3 {
+    width: 100px;
+}
+.add_on_name {
+	width:190px;
+}
+.add_on_cost{
+	width:80px;
 }
 
-#work_order_shop_id {width:260px;}
-#work_order_client_id {width:260px;}
-#work_order_stock_number {width:255px;}
-#work_order_vin {width:255px;}
-#work_order_model_id {min-width:102px;}
 
-#jobs .col1 {width:100px;}
-#jobs .col2 {width:100px;}
-#jobs .col3 {width:100px;}
-
+#add_ons .col1 {
+	width:200px;
+	padding-right:10px;
+}
+#add_ons .col2 {
+	width:90px;
+}
+#add_ons .col3 {
+	width:50px;
+}
 #stats {
-	float: right;
+    float: right;
     width: 200px;
 }
-
 #stats td {
-	background: none repeat scroll 0 0 #003366;
+    background: none repeat scroll 0 0 #003366;
     color: #FFFFFF;
     font-weight: bold;
     text-align: center;
 }
-
 #stats th {
-	text-align: center;
+    text-align: center;
 }
-
 #shopsTbl {
-	border: 1px solid #6699CC;
+    border: 1px solid #6699CC;
     border-collapse: collapse;
     font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
-    
-    
     text-align: left;
     width: 100%;
 }
-
 #blueTbl tbody {
-	background: none repeat scroll 0 0 #E8EDFF;
+    background: none repeat scroll 0 0 #E8EDFF;
 }
-
 #blueTbl {
-	margin-top:10px;
+    margin-top: 10px;
 }
-
 #blueTbl th {
-	color: #003399;
+    color: #003399;
     font-size: 14px;
     font-weight: normal;
     padding: 5px;
-    text-align:center;
+    text-align: center;
 }
-
 #blueTbl td {
-	border-top: 1px dashed #FFFFFF;
+    border-top: 1px dashed #FFFFFF;
     color: #666699;
     padding: 5px;
-    text-align:center;
+    text-align: center;
 }
-
 #blueTbl tbody tr:hover td {
     background: none repeat scroll 0 0 #D0DAFD;
     color: #333399;
 }
-
-.buttonHdr{width:102px;}
-
+.buttonHdr {
+    width: 102px;
+}
 .showBtn, .editBtn, .delBtn {
-	width:20px;
-	height:20px;
-	float:left;
-	margin: 0 7px
+    float: left;
+    height: 20px;
+    margin: 0 7px;
+    width: 20px;
 }
-
 .title {
-	float:left;
-	font-size:2em;
-	
+    float: left;
+    font-size: 2em;
 }
-
 .newBtn {
-	width:32px;
-	height:32px;
-	float:left;
-	background: url('/images/add.png') no-repeat top left;
-	margin-left:20px;
+    background: url("/images/add.png") no-repeat scroll left top transparent;
+    float: left;
+    height: 32px;
+    margin-left: 20px;
+    width: 32px;
 }
-
 .workOrderBtn {
-	float:left; 
+    float: left;
 }
-
-.showBtn {background: url('/images/show.png') no-repeat top left;}
-.editBtn {background: url('/images/edit.png') no-repeat top left;}
-.delBtn {background: url('/images/del.png') no-repeat top left;}
-.buttons {width:138px;}
-
-#row1, #row2 {
-	clear:both;
-	float:left;
+.showBtn {
+    background: url("/images/show.png") no-repeat scroll left top transparent;
 }
-
+.editBtn {
+    background: url("/images/edit.png") no-repeat scroll left top transparent;
+}
+.delBtn {
+    background: url("/images/del.png") no-repeat scroll left top transparent;
+}
+.buttons {
+    width: 138px;
+}
+#row1, #row2, #row3 {
+    clear: both;
+    float: left;
+}
 .col1, .col2, .col3 {
-	float:left;}
-
-.col1 {width:60px;}
-.col2 {width:400px;}
-.form {line-height:28px;}
-
-.tblWorkOrders {width: 1000px;}
-
+    float: left;
+}
+.col1 {
+    width: 60px;
+}
+.col2 {
+    width: 400px;
+}
+.form {
+    line-height: 28px;
+}
+.tblWorkOrders {
+    width: 1000px;
+}
 .newWorkOrder {
-	width:200px;
-	height:50px;
-	
+    height: 50px;
+    width: 200px;
 }
 .workOrder {
     border: 1px solid #CCCCCC;
     float: left;
+    height: 138px;
     margin: 5px;
     padding: 5px;
     width: 478px;
-    height: 138px;
 }
-
 .workOrder .col1 {
-	width: 240px;
-	float:left;
+    float: left;
+    width: 240px;
 }
-
 .workOrder .col2 {
     float: right;
     width: 190px;
 }
-
 .workOrderTimes {
-	float:right;
+    float: right;
 }
-
 .workOrderTimes td, .workOrderTimes th {
-	padding:4px;
-	border:0;
+    border: 0 none;
+    padding: 4px;
 }
-
-
-
-
-ADDRESS,
-BLOCKQUOTE,
-BODY, DD, DIV,
-DL, DT,
-FIELDSET, FORM,
-FRAME, FRAMESET,
-H1, H2, H3, H4,
-H5, H6, IFRAME,
-NOFRAMES,
-OBJECT, OL, P,
-UL, APPLET,
-CENTER, DIR,
-HR, MENU, PRE   { display: block }
-LI              { display: list-item }
-HEAD            { display: none }
-TABLE           { display: table }
-TR              { display: table-row }
-THEAD           { display: table-header-group }
-TBODY           { display: table-row-group }
-TFOOT           { display: table-footer-group }
-COL             { display: table-column }
-COLGROUP        { display: table-column-group }
-TD, TH          { display: table-cell }
-CAPTION         { display: table-caption }
-TH              { font-weight: bolder; text-align: center }
-CAPTION         { text-align: center }
-BODY            { padding: 8px; line-height: 1.33 }
-H1              { font-size: 2em; margin: .15em 0 }
-H2              { font-size: 1.5em; margin: .13em 0 }
-H3              { font-size: 1.17em; margin: .1em 0 }
-H4, P,
-BLOCKQUOTE, UL,
-FIELDSET, FORM,
-OL, DL, DIR,
-MENU            { margin: 1.33em 0 }
-H5              { font-size: .83em; line-height: 1.17em; margin: 1.67em 0 }
-H6              { font-size: .67em; margin: 2.33em 0 }
-H1, H2, H3, H4,
-H5, H6, B,
-STRONG          { font-weight: bolder }
-BLOCKQUOTE      { margin-left: 40px; margin-right: 40px }
-I, CITE, EM,
-VAR, ADDRESS    { font-style: italic }
-PRE, TT, CODE,
-KBD, SAMP       { font-family: monospace }
-PRE             { white-space: pre }
-BIG             { font-size: 1.17em }
-SMALL, SUB, SUP { font-size: .83em }
-SUB             { vertical-align: sub }
-SUP             { vertical-align: super }
-S, STRIKE, DEL  { text-decoration: line-through }
-HR              { border: 1px inset }
-OL, UL, DIR,
-MENU, DD        { margin-left: 40px }
-OL              { list-style-type: decimal }
-OL UL, UL OL,
-UL UL, OL OL    { margin-top: 0; margin-bottom: 0 }
-U, INS          { text-decoration: underline }
-CENTER          { text-align: center }
-BR:before       { content: "\A" }
- 
+address, blockquote, body, dd, div, dl, dt, fieldset, form, frame, frameset, h1, h2, h3, h4, h5, h6, iframe, noframes, object, ol, p, ul, applet, center, dir, hr, menu, pre {
+    display: block;
+}
+li {
+    display: list-item;
+}
+head {
+    display: none;
+}
+table {
+    display: table;
+}
+tr {
+    display: table-row;
+}
+thead {
+    display: table-header-group;
+}
+tbody {
+    display: table-row-group;
+}
+tfoot {
+    display: table-footer-group;
+}
+col {
+    display: table-column;
+}
+colgroup {
+    display: table-column-group;
+}
+td, th {
+    display: table-cell;
+}
+caption {
+    display: table-caption;
+}
+th {
+    font-weight: bolder;
+    text-align: center;
+}
+caption {
+    text-align: center;
+}
+body {
+    line-height: 1.33;
+    padding: 8px;
+}
+h1 {
+    font-size: 2em;
+    margin: 0.15em 0;
+}
+h2 {
+    font-size: 1.5em;
+    margin: 0.13em 0;
+}
+h3 {
+    font-size: 1.17em;
+    margin: 0.1em 0;
+}
+h4, p, blockquote, ul, fieldset, form, ol, dl, dir, menu {
+    margin: 1.33em 0;
+}
+h5 {
+    font-size: 0.83em;
+    line-height: 1.17em;
+    margin: 1.67em 0;
+}
+h6 {
+    font-size: 0.67em;
+    margin: 2.33em 0;
+}
+h1, h2, h3, h4, h5, h6, b, strong {
+    font-weight: bolder;
+}
+blockquote {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+i, cite, em, var, address {
+    font-style: italic;
+}
+pre, tt, code, kbd, samp {
+    font-family: monospace;
+}
+pre {
+    white-space: pre;
+}
+big {
+    font-size: 1.17em;
+}
+small, sub, sup {
+    font-size: 0.83em;
+}
+sub {
+    vertical-align: sub;
+}
+sup {
+    vertical-align: super;
+}
+s, strike, del {
+    text-decoration: line-through;
+}
+hr {
+    border: 1px inset;
+}
+ol, ul, dir, menu, dd {
+    margin-left: 40px;
+}
+ol {
+    list-style-type: decimal;
+}
+ol ul, ul ol, ul ul, ol ol {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+u, ins {
+    text-decoration: underline;
+}
+center {
+    text-align: center;
+}
+br:before {
+    content: "\A ";
+}

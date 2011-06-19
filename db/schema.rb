@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110617052625) do
+ActiveRecord::Schema.define(:version => 20110619035930) do
+
+  create_table "add_ons", :force => true do |t|
+    t.string   "name"
+    t.string   "cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "work_order_id"
+  end
 
   create_table "cars", :force => true do |t|
     t.string   "make"
@@ -56,28 +64,12 @@ ActiveRecord::Schema.define(:version => 20110617052625) do
     t.datetime "updated_at"
   end
 
-  create_table "employees", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "street_address"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.string   "phone"
-    t.string   "email"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "jobs", :force => true do |t|
-    t.integer  "employee_id"
     t.integer  "work_order_id"
     t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "contractor_id"
   end
 
   create_table "makes", :force => true do |t|
@@ -91,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20110617052625) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cost"
   end
 
   create_table "shops", :force => true do |t|

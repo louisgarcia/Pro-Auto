@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div id="row1">
+  <div id="work_order">
 	<div class="col1">
 		<div class="form">
 			<%= f.label :shop %><br />
@@ -21,6 +21,7 @@
 			Car<br />
 	    	<%= f.label :vin %><br />
 			<br />
+			Created<br />
 			<%= f.label :received %><br />
 	  		<%= f.label :started %><br />
 	  		<%= f.label :finished %><br />
@@ -34,7 +35,7 @@
 			<%= f.select :status, ["New","Received","Started","Finished","Delivered"] %><br />
 			<%= f.select(:client_id, Client.all.collect {|c| [ c.business_name, c.id ] }, {:include_blank => true}) %><br />
 			<%= f.text_field :stock_number %><br />
-			<%= f.select :year, options_for_select([ "","2011", "2010","2009","2008","2007","2006","2005","2004","2003","2002"],"") %>	
+			<%= f.select :year, ["","2011","2010","2009","2008","2007","2006","2005","2004","2003","2002"] %>	
 			<%= f.select :make_id, @makes_for_select, {:include_blank => true} %>
 			<%= f.collection_select :model_id, Model.find(:all), :id, :name, {:include_blank => true} %><br />
 			<%= f.text_field :vin %><br />
@@ -45,17 +46,18 @@
 			<%= f.datetime_select :finished, :include_blank => true %><br />
 			<%= f.datetime_select :delivered, :include_blank => true %><br />
 			<%= f.text_area :notes, :size => "30x2" %><br />
-
-			
 		</div>
 	</div>
+</div>
+<div id="work_details">
 	<div id="jobs">
+	<h2>Jobs</h2>
 		<div id="row1">
 			<div class="col1">
-			Employee
+				Contractor
 			</div>
 			<div class="col2">
-			Role
+				Role
 			</div>
 			<div class="col3">
 			</div>
@@ -65,16 +67,31 @@
 				<%= render "job_fields", :f => job %>
 			<% end %>
 		</div>
+		<div id="row3">
+			<%= link_to_add_fields "Add Job", f, :jobs %>
+		</div>
 	</div>
-	<br />
-	<%= link_to_add_fields "Add Job", f, :jobs %>
-
-
-	
-    
-  <div class="actions">
- 	 <p><%= f.submit "Submit" %></p>
-
-    
-  </div>
+	<div id="add_ons">
+	<h2>Add On</h2>	
+		<div id="row1">
+			<div class="col1">
+				Add On
+			</div>
+			<div class="col2">
+				Cost
+			</div>
+			</div>
+		<div id="row2">
+			<% f.fields_for :add_ons do |add_on| %>
+				<%= render "add_on_fields", :f => add_on %>
+			<% end %>
+		</div>
+		<div id="row3">
+		<%= link_to_add_fields "Add Add-On", f, :add_ons %>
+		</div>
+	</div>
+	<div class="actions">
+		<p><%= f.submit "Submit" %></p>
+	</div>
+</div>
 <% end %>

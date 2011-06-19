@@ -1,11 +1,11 @@
 <div class="job fields">
 	<div class="col1">
-		<%= f.select :employee_id, @employees_for_select, {:include_blank => true} %><br />
+		<%= f.select :contractor_id, @contractors_for_select, {:include_blank => true} %><br />
 	</div>
 	<div class="col2">
-  		<%= f.select :role, ["Receiver","Detailer","Deliverer"], {:include_blank => true} %><br />
-	</div> 
+   		<%= f.select :role, ["Receiver","Detailer","Deliverer"], {:include_blank => true} %><br />
+	</div>
 	<div class="col3">
-	  <%= link_to_remove_fields "remove", f %>
+	<%= link_to_remove_fields "remove", f %>
 	</div>
 </div>

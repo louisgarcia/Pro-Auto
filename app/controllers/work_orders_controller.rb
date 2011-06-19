@@ -32,8 +32,9 @@ class WorkOrdersController < ApplicationController
     @makes_for_select = @makes.map{|m| [m.name, m.id]}
     @clients = Client.find(:all, :order => "business_name")
     @clients_for_select = @clients.map{|c| [c.business_name, c.id]}
-    @employees = Employee.find(:all, :order => "first_name")
-    @employees_for_select = @employees.map{|e| [e.first_name, e.id]}
+    @contractors = Contractor.find(:all, :order => "first_name")
+    @contractors_for_select = @contractors.map{|contractors| [contractors.first_name, contractors.id]}
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @work_order }
@@ -48,16 +49,16 @@ class WorkOrdersController < ApplicationController
     @makes_for_select = @makes.map{|m| [m.name, m.id]}
     @clients = Client.find(:all, :order => "business_name")
     @clients_for_select = @clients.map{|c| [c.business_name, c.id]}
-    @employees = Employee.find(:all, :order => "first_name")
-    @employees_for_select = @employees.map{|e| [e.first_name, e.id]}
+    @contractors = Contractor.find(:all, :order => "first_name")
+    @contractors_for_select = @contractors.map{|contractors| [contractors.first_name, contractors.id]}
   end
   
   # GET /work_orders/1/edit
   def assignment
     @work_order = WorkOrder.find(params[:id])
     @work_order.jobs.build
-    @employees = Employee.find(:all, :order => "first_name")
-    @employees_for_select = @employees.map{|e| [e.first_name, e.id]}
+    @contractors = Contractor.find(:all, :order => "first_name")
+    @contractors_for_select = @contractors.map{|contractors| [contractors.first_name, contractors.id]}
   end
 
   # POST /work_orders

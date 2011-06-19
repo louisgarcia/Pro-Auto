@@ -14,15 +14,15 @@
 	<tr></tr>
   </tfoot>
   <tbody>
-<% @contractors.each do |contractor| %>
+<% @contractors.each do |c| %>
   <tr>
-    <td><%= contractor.first_name %> <%= contractor.last_name %></td>
-    <td><%= contractor.street_address %> <%= contractor.city %> <%= contractor.state %> <%= contractor.zip %></td>
-    <td><%= contractor.phone %></td>
-    <td><%= contractor.title %></td>
-    <td><%= link_to '', contractor, :class => 'showBtn' %>
-		<%= link_to '', edit_contractor_path(contractor), :class => 'editBtn' %>
-	    <%= link_to '', contractor, :class => 'delBtn', :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= c.first_name %> <%= c.last_name %></td>
+    <td><%= c.street_address %> <%= c.city %> <%= c.state %> <%= c.zip %></td>
+    <td><%= c.phone %></td>
+    <td><%= c.title %></td>
+    <td><%= link_to '', c, :class => 'showBtn' %>
+		<%= link_to '', edit_contractor_path(c), :class => 'editBtn' %>
+	    <%= link_to '', c, :class => 'delBtn', :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

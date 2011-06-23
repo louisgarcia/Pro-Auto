@@ -6,6 +6,7 @@
 	    <th>Make</th>
 	    <th>Model</th>
 		<th>Cost</th>
+		<th>Price</th>
 	    <th class="buttonHdr"></th>
 	  </tr>
   </thead>
@@ -17,6 +18,7 @@
 	    <td><%= model.make.name%></td>
 	    <td><%= model.name %></td>
 		<td><%= model.cost %></td>
+		<td><%= model.price %></td>
 	    <td>
 		<%= link_to '', model, :class => 'showBtn' %>
 		<%= link_to '', edit_model_path(model), :class => 'editBtn' %>

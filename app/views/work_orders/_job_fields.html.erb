@@ -3,8 +3,12 @@
 		<%= f.select :contractor_id, @contractors_for_select, {:include_blank => true} %><br />
 	</div>
 	<div class="col2">
-   		<%= f.select :role, ["Receiver","Detailer","Deliverer"], {:include_blank => true} %><br />
+   		<%= f.select :role, ["Receiver","Detailer","Deliverer","(Add On)"], {:include_blank => true} %><br />
 	</div>
+	<div class="col2">
+   		<%= f.text_field :cost, :size => "8" %><br />
+	</div>
+
 	<div class="col3">
 	<%= link_to_remove_fields "remove", f %>
 	</div>

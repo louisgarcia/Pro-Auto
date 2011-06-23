@@ -59,6 +59,9 @@
 			<div class="col2">
 				Role
 			</div>
+			<div class="col2">
+				Cost
+			</div>
 			<div class="col3">
 			</div>
 		</div>	
@@ -78,9 +81,9 @@
 				Add On
 			</div>
 			<div class="col2">
-				Cost
+				Price
 			</div>
-			</div>
+		</div>
 		<div id="row2">
 			<% f.fields_for :add_ons do |add_on| %>
 				<%= render "add_on_fields", :f => add_on %>
